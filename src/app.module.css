@@ -1,0 +1,64 @@
+@import "reset.css";
+
+body {
+    background-color: #0B3157;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.usersList {
+    max-width: 360px;
+    min-width: 360px;
+    height: 100vh;
+    background-color: #FFFFFF;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+}
+
+.borderRadius50 {
+    border-radius: 50%;
+}
+
+.checkBox {
+    width: 28px;
+    height: 28px;
+    background-color: #DBE0E6;
+    display: inline-block;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.flexBoxContainer {
+    display: flex;
+}
+
+.info{
+    display: inline-block;
+    color: #0B3157;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    line-height: 19px;
+    text-align: left;
+
+    margin-left: -60px;
+}
+
+.level{
+    opacity: 0.5;
+}
+
+.listElement{
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 22px 0;
+    border: 1px solid #E6EAEE;
+}
