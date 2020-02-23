@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import styles from'./app.module.css';
-import Icon from '@mdi/react'
-import { mdiCheck  } from '@mdi/js';
+import styles               from './app.module.css';
+import Icon                 from '@mdi/react';
+import { mdiCheck }         from '@mdi/js';
 
 const coaches = [
   {
@@ -46,33 +46,34 @@ class App extends Component {
   constructor (props) {
     super( props );
     this.state = {
-      coaches: coaches.map(coach => ({ ...coach, isSelected: false})),
+      coaches: coaches.map( coach => ({ ...coach, isSelected: false }) ),
     };
   }
 
   render () {
     return (
       <ul className={`${styles.usersList}`}>
+        {this.state.coaches.map( (coach) =>
+                                   <li key={coach.id} className={`${styles.listElement} ${styles.flexBoxContainer}`}>
 
-        <li className={`${styles.listElement} ${styles.flexBoxContainer}`}>
+                                     <div className={`${styles.userContainer} ${styles.flexBoxContainer}`}>
+                                       <img className={`${styles.avatar} ${styles.borderRadius50}`}
+                                            src={coach.avatar} alt=""/>
 
-          <img className={`${styles.avatar} ${styles.borderRadius50}`}
-               src={this.state.coaches[0].avatar} alt=""/>
+                                       <div className={styles.info}>
+                                         <h1>{`${coach.firstName} ${coach.lastName}`}</h1>
+                                         <h2 className={styles.level}>{`Level ${coach.level}`}</h2>
+                                       </div>
+                                     </div>
 
-          <div className={styles.info}>
-            <h1>{`${this.state.coaches[0].firstName} ${this.state.coaches[0].lastName}`}</h1>
-            <h2 className={styles.level}>{`Level ${this.state.coaches[0].level}`}</h2>
-          </div>
-
-          <div className={`${styles.checkBox} ${styles.borderRadius50} ${styles.flexBoxContainer}`
-               }>
-            <Icon path={mdiCheck}
-                  color={'#FFF'}
-                  size='20px' />
-          </div>
-
-        </li>
-
+                                     <div
+                                       className={`${styles.checkBox} ${styles.borderRadius50} ${styles.flexBoxContainer}`
+                                       }>
+                                       <Icon path={mdiCheck}
+                                             color={'#FFF'}
+                                             size='20px'/>
+                                     </div>
+                                   </li> )}
       </ul>
     );
   }
