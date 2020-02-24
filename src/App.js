@@ -50,31 +50,45 @@ class App extends Component {
     };
   }
 
+  checkBoxFunc = (coach) => {
+    this.setState( () => { return coach.isSelected = !coach.isSelected;} );
+  };
+
   render () {
     return (
-      <ul className={`${styles.usersList}`}>
-        {this.state.coaches.map( (coach) =>
-                                   <li key={coach.id} className={`${styles.listElement} ${styles.flexBoxContainer}`}>
+      <React.Fragment>
+        <p>`to: ${this.state.coaches.map( (coach) => {
+          coach.isSelected ? `${coach.firstName} ${coach.lastName}` : ''
+        })}`</p>
+        <ul className={`${styles.usersList}`}>
+          {this.state.coaches.map( (coach) =>
+                                     <li key={coach.id} className={`${styles.listElement} ${styles.flexBoxContainer}`}>
 
-                                     <div className={`${styles.userContainer} ${styles.flexBoxContainer}`}>
-                                       <img className={`${styles.avatar} ${styles.borderRadius50}`}
-                                            src={coach.avatar} alt=""/>
+                                       <div className={`${styles.userContainer} ${styles.flexBoxContainer}`}>
+                                         <img className={`${styles.avatar} ${styles.borderRadius50}`}
+                                              src={coach.avatar} alt=""/>
 
-                                       <div className={styles.info}>
-                                         <h1>{`${coach.firstName} ${coach.lastName}`}</h1>
-                                         <h2 className={styles.level}>{`Level ${coach.level}`}</h2>
+                                         <div className={styles.info}>
+                                           <h1>{`${coach.firstName} ${coach.lastName}`}</h1>
+                                           <h2 className={styles.level}>{`Level ${coach.level}`}</h2>
+                                         </div>
                                        </div>
-                                     </div>
 
-                                     <div
-                                       className={`${styles.checkBox} ${styles.borderRadius50} ${styles.flexBoxContainer}`
-                                       }>
-                                       <Icon path={mdiCheck}
-                                             color={'#FFF'}
-                                             size='20px'/>
-                                     </div>
-                                   </li> )}
-      </ul>
+                                       <div
+                                         className={`${styles.checkBox} ${styles.borderRadius50} ${styles.flexBoxContainer} ${coach.isSelected
+                                                                                                                              ? styles.selectedCheckbox
+                                                                                                                              : ''}`}
+                                         onClick={
+                                           (e) => this.checkBoxFunc( coach, e )
+                                         }
+                                       >
+                                         <Icon path={mdiCheck}
+                                               color={'#FFF'}
+                                               size='20px'/>
+                                       </div>
+                                     </li> )}
+        </ul>
+      </React.Fragment>
     );
   }
 
