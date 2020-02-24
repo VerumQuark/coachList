@@ -56,11 +56,8 @@ class App extends Component {
 
   render () {
     return (
-      <React.Fragment>
-        <p>`to: ${this.state.coaches.map( (coach) => {
-          coach.isSelected ? `${coach.firstName} ${coach.lastName}` : ''
-        })}`</p>
         <ul className={`${styles.usersList}`}>
+
           {this.state.coaches.map( (coach) =>
                                      <li key={coach.id} className={`${styles.listElement} ${styles.flexBoxContainer}`}>
 
@@ -88,7 +85,6 @@ class App extends Component {
                                        </div>
                                      </li> )}
         </ul>
-      </React.Fragment>
     );
   }
 
