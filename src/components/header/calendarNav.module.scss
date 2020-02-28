@@ -1,0 +1,36 @@
+@import "../../styles/modules/variables";
+
+.nav{
+    width: 375px;
+    height: 40px;
+
+    background-color: $primary-color;
+    position: relative;
+    text-transform: uppercase;
+
+    font-family: 'Montserrat', 'sans-serif' ;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.currentMonth{
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 19px;
+    color: $secondary-color;
+}
+
+.sideMonth{
+    font-size: 12px;
+    font-weight: 700;
+    color: $accent-color;
+}
+
+.navArrow{
+    height: 12px;
+}

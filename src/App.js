@@ -1,6 +1,6 @@
-import React, { Component }  from 'react';
-import styles                from './app.module.css';
-import CalendarNav from './components/header/index.js'
+import React, { Component } from 'react';
+import styles               from './app.module.scss';
+import CalendarNav          from './components/header/index.js'
 
 class App extends Component {
 

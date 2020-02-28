@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles               from './header.module.css';
+import styles               from './calendarNav.module.scss';
 import Icon                 from '@mdi/react';
 import { mdiChevronDown }   from '@mdi/js';
 
@@ -21,12 +21,14 @@ class CalendarNav extends Component {
           {this.state.prevMonth}
         </h2>
 
-        <h1>
-          {this.state.currentMonth}
-        </h1>
-        <Icon className={styles.navArrow}
-          path={mdiChevronDown}
-              vertical={true}/>
+        <div>
+          <h1>
+            {this.state.currentMonth}
+          </h1>
+          <Icon className={styles.navArrow}
+                path={mdiChevronDown}
+                vertical={true}/>
+        </div>
 
         <h2>
           {this.state.nextMonth}
